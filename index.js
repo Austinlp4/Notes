@@ -15,5 +15,14 @@ server.get('/', (req,res) => {
     res.send('Everything is Working');
 });
 
+server.get('/notes', (req, res) => {
+    db('notes')
+      .select('id', 'title', 'content')
+      .then(notes => {
+          res.status(200).json(notes);
+      })
+      .catch(err => res.status(500).json(err));
+});
+
 
 server.listen(5000, () => console.log('running on port 5000'));
