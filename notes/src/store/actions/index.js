@@ -13,7 +13,7 @@ export const ADD_NOTE_START = 'ADD_NOTE_START';
 export const ADD_NOTE_SUCCESS = 'ADD_NOTE_SUCCESS';
 export const ADD_NOTE_FAILURE = 'ADD_NOTE_FAILURE';
 
-// STRETCH
+
 export const getNotes = () => dispatch => {
     dispatch({type: NOTE_FETCH_START});
     const promise = axios.get('http://localhost:5000/notes');

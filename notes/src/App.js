@@ -13,6 +13,7 @@ const Nav = styled.div`
   padding: 3%;
   background-color: lightgray;
   box-shadow: 5px 5px 10px lightslategray;
+  margin-right: 2%;
   
   li{
     list-style-type: none;
