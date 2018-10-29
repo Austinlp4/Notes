@@ -4,11 +4,17 @@ import styled from 'styled-components';
     margin: 2% 1%;
     display: flex;
     flex-direction: row;
-    background-color: black;
+    background-color: rgb(42,48,43);
     width: 200px;
     height: 200px;
-    border: 1px solid gray;
+    border: none;
     padding: .4% 1% 1% 1%;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px rgba(0, 255, 60, 0.2);
+    &:hover{
+        background-color: rgba(48,57,50, 0.8);
+        box-shadow: 2px 2px 2px rgba(0, 255, 60, 0.5);
+      }
     a{
         text-decoration: none;
         color: black;
@@ -27,10 +33,42 @@ import styled from 'styled-components';
         color: cyan;
     }
     p{
+        /* hide text if it more than N lines  */
         overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        /* for set '...' in absolute position */
+        position: relative; 
+        /* use this value to count block height */
+        line-height: 1.2em;
+        /* max-height = line-height (1.2) * lines max number (3) */
+        max-height: 4.7em; 
+        /* fix problem when last visible word doesn't adjoin right side  */
+        text-align: justify;  
+        /* place for '...' */
+        margin-right: -1em;
+        padding-right: 1em;
         color: cyan;
+        &:before{
+            /* points in the end */
+            content: '';
+            /* absolute position */
+            position: absolute;
+            /* set position to right bottom corner of block */
+            right: 0;
+            bottom: 0;
+        }
+        &:after{
+            /* points in the end */
+            content: '';
+            /* absolute position */
+            position: absolute;
+            /* set position to right bottom corner of text */
+            right: 0;
+            /* set width and height */
+            width: 1em;
+            height: 1em;
+            margin-top: 0.2em;
+
+        }
     }
     button{
         display: none;

@@ -15,7 +15,8 @@ const Container = styled.div`
 
 class NotesListView extends React.Component {
         state = {
-            searchInput: ''
+            searchInput: '',
+            hidden: false
         }
     
     componentDidMount() {
@@ -33,7 +34,7 @@ class NotesListView extends React.Component {
 
       searchSubmit = event => {
         event.preventDefault();
-        this.props.searchNote(this.state.searchInput);
+        this.props.searchNotes(this.state.searchInput);
         this.setState({searchInput: ''});
       };
 

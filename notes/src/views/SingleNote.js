@@ -3,6 +3,11 @@ import React from "react";
 // import './SingleNote.css';
 import { connect } from 'react-redux';  
 import { deleteNote, setUpdateNote, getNotes } from '../store/actions';
+import styled from 'styled-components';
+
+const Active = styled.div`
+    
+`
 
 
 
