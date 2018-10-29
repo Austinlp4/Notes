@@ -38,8 +38,20 @@ server.get('/notes/:id', async (req, res) => {
       } catch (error) {
           res.status(500).json(err);
       }
-  
 });
+
+server.post('/notes', (req, res) => {
+    const note = req.body;
+
+    db.insert(note)
+      .into('notes')
+      .then(ids => {
+          res.status(201).json(ids[0]);
+      })
+      .catch(err => {
+          res.status(500).json(err);
+      });
+})
 
 
 server.listen(5000, () => console.log('running on port 5000'));
