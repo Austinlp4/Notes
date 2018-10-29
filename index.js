@@ -6,9 +6,13 @@ const knexConfig = require('./knexfile.js');
 const db = knex(knexConfig.development);
 
 const server = express();
+const cors = require('cors');
+const logger = require('morgan');
 
 server.use(helmet());
 server.use(express.json());
+server.use(logger('combined'));
+server.use(cors());
 
 //sanity check
 server.get('/', (req,res) => {
@@ -69,6 +73,22 @@ server.put('/notes/:id', (req, res) => {
       })
       .catch(err => res.status(500).json(err));
 });
+
+server.delete('/notes/:id', (req, res) => {
+    const { id } = req.params;
+
+    db('notes')
+      .where({ id })
+      .delete(id)
+      .then(count => {
+        if (!count || count < 1) {
+            res.status(404).json({ message: 'No records found to delete' });
+          } else {
+            res.status(200).json(count);
+          }
+      })
+      .catch(err => res.status(500).json(err));
+})
 
 
 server.listen(5000, () => console.log('running on port 5000'));
