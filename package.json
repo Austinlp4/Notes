@@ -1,0 +1,15 @@
+{
+  "name": "Notes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Austinlp4/Notes.git",
+  "author": "Austinlp4 <apendergrast44@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "sqlite3": "^4.0.3"
+  }
+}
