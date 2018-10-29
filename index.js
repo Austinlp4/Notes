@@ -24,5 +24,22 @@ server.get('/notes', (req, res) => {
       .catch(err => res.status(500).json(err));
 });
 
+server.get('/notes/:id', async (req, res) => {
+  try {
+      const { id } = req.params;
+
+      const note = await db('notes').where({ id });
+
+      if(note) {
+          res.status(200).json(note);
+      } else {
+          res.status(404).json({ message: 'No note found with this id' });
+        }
+      } catch (error) {
+          res.status(500).json(err);
+      }
+  
+});
+
 
 server.listen(5000, () => console.log('running on port 5000'));
