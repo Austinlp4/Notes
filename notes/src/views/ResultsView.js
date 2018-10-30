@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getNotes, searchNote } from '../store/actions/index';
-import NotesList from '../components/NotesList/NotesList';
 import SearchBar from '../components/Search/Search';
 import styled from 'styled-components';
-
+import Results from '../components/NotesList/Results'
 
 const Container = styled.div`
   
@@ -14,7 +13,7 @@ const Container = styled.div`
   }
 `
 
-class NotesListView extends React.Component {
+class ResultsListView extends React.Component {
         state = {
             searchInput: '',
             hidden: false
@@ -37,7 +36,7 @@ class NotesListView extends React.Component {
         event.preventDefault();
         this.props.searchNote(this.state.searchInput);
         this.setState({searchInput: ''});
-        this.props.history.push('/results');
+        this.history.push('/results');
       };
 
     render() {
@@ -47,7 +46,7 @@ class NotesListView extends React.Component {
             searchNotes={this.searchNotes} 
             searchSubmit={this.searchSubmit} 
             {...this.props}/>
-            <NotesList            
+            <Results            
             {...this.props} />
             </Container>
         );
@@ -59,4 +58,4 @@ const mapStateToProps = state => ({
     results: state.results
 });
 
-export default connect(mapStateToProps, { getNotes, searchNote })(NotesListView);
+export default connect(mapStateToProps, { getNotes, searchNote })(ResultsListView);

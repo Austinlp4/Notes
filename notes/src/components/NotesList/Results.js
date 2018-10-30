@@ -6,16 +6,11 @@ import { NavLink } from "react-router-dom";
 import { Note } from './StyledNoteslist';
 import { NoteContainer } from './StyledListContainer';
 
-function NotesList(props) {
-    console.log(props);
-    if(!props.notesList || !props.notesList.length) {
-        return <h1>Make Your First Note!</h1>
-    }
-   
-    
-    return (
+function Results(props) {
+  
+        return(
         <NoteContainer style={{ display: 'flex', flexWrap: 'wrap'}}>
-            {props.notesList.map((note, index) => (  
+            {props.results.map((note, index) => (  
                 <Note key={index}>
                    <NavLink to={`notes/${note.title}`} activeClassName='active'>      
                     <SingleNote  noteId={note.title} {...props} note={note}/>      
@@ -23,7 +18,10 @@ function NotesList(props) {
                 </Note> 
             ))}
         </NoteContainer>
-    );
+        )
+    
+    
+    
 }
 
-export default NotesList;
+export default Results;

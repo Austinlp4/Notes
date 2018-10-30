@@ -17,7 +17,8 @@ const initialState = {
 notes: [],
 noteToUpdate: null,
 isLoading: false,
-addingNote: false
+addingNote: false,
+results: []
 
 };
 
@@ -50,9 +51,9 @@ switch(action.type) {
         state.notes[noteIndex] = action.payload;
         return {...state, ...state.notes[noteIndex], noteToUpdate: null}
     case SEARCH_NOTE:
-        let notes = state.notes.slice();
-        notes = notes.filter(note => note.title.includes(action.payload));
-        return {...state, notes: notes}
+        let notesCopy = state.notes.slice();
+        let result = notesCopy.filter(note => note.title.toLowerCase().includes(action.payload));
+        return {...state, results: result}
     default:
         return state;
 }

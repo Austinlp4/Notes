@@ -3,6 +3,7 @@ import { Route, NavLink, withRouter } from 'react-router-dom';
 import './App.css';
 import NotesListView from './views/NotesListView';
 import NotesFormView from './views/NotesFormView';
+import ResultsView from './views/ResultsView';
 import SingleNote from './views/SingleNote';
 import styled from 'styled-components';
 
@@ -17,7 +18,7 @@ const Nav = styled.div`
   margin-right: 2%;
   h1{
     color: rgba(48,57,50, 0.8);
-    text-shadow: 2px 2px rgba(0, 255, 60, 0.5);\
+    text-shadow: 2px 2px rgba(0, 255, 60, 0.5);
     text-align: center;
     font-size: 50px;
   }
@@ -86,6 +87,7 @@ class App extends Component {
         <Route exact path='/notes' component={NotesListView} />
         <Route path= '/notes-form' component={NotesFormView} />
         <Route path='/notes/:noteId' component={SingleNote} />
+        <Route path='/results' component={ResultsView} />
       </div>
     );
   }
