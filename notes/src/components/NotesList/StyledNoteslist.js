@@ -31,6 +31,7 @@ import styled from 'styled-components';
         text-overflow: ellipsis;
         white-space: nowrap;
         color: cyan;
+        font-size: 30px;
     }
     p{
         /* hide text if it more than N lines  */

@@ -5,11 +5,30 @@ import { connect } from 'react-redux';
 import { deleteNote, setUpdateNote, getNotes } from '../store/actions';
 import styled from 'styled-components';
 
-const Active = styled.div`
-    
+const Single = styled.div`
+   h2{
+       color: green;
+       font-size: 35px;
+   }
+   p {
+       color: white;
+       font-size: 20px;
+   }
+
 `
-
-
+const Button = styled.button`
+   height: 40px;
+   width: 150px;
+   color: white;
+   background-color: rgb(42,48,43);
+   box-shadow: 5px 5px 5px rgba(0, 255, 60, 0.5);
+   border: none;
+   margin: 5px;
+   &:hover{
+    background-color: rgba(48,57,50, 0.8);
+    box-shadow: 2px 2px 2px rgba(0, 255, 60, 0.5);
+  }
+`
 
 class SingleNote extends React.Component {
     constructor(props){
@@ -58,19 +77,19 @@ class SingleNote extends React.Component {
         const {title, content} = this.state.note
         return(
                 
-        <div className='active' >
+        <Single >
            <div className='buttons'>
-            <button onClick={this.handleDeleteNote}>Delete</button>
+            <Button onClick={this.handleDeleteNote}>Delete</Button>
             
-            <button onClick={event => {
+            <Button onClick={event => {
                 event.preventDefault();
                 this.goToUpdateNoteForm(event, this.state.note.title)
-            }}>Update</button>
+            }}>Update</Button>
             </div>
             <h2>{title}</h2>
             <p>{content}</p>
             
-        </div>
+        </Single>
         
         );
     }
