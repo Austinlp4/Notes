@@ -93,7 +93,7 @@ server.delete('/notes/:id', (req, res) => {
 })
 
 //Auth endpoints
-server.post('/api/register', (req, res) => {
+server.post('/register', (req, res) => {
     const credentials = req.body;
 
     const hash = bcrypt.hashSync(credentials.password, 10);
@@ -126,7 +126,7 @@ function generateToken(user) {
     return jwt.sign(jwtPayload, jwtSecret, jwtOptions);
 }
 
-server.post('/api/login', (req, res) => {
+server.post('/login', (req, res) => {
     const creds = req.body;
 
     db('users')
