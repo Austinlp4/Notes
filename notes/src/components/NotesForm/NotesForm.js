@@ -8,10 +8,12 @@ const FormContainer = styled.form`
     h2{
         color: green;
         font-size: 40px;
+        font-family: 'Orbitron', sans-serif;
     }
     h3{
         color: green;
         font-size: 20px;
+        font-family: 'Orbitron', sans-serif;
     }
     button{
         height: 50px;
@@ -38,16 +40,23 @@ const FormContainer = styled.form`
         border-radius: 12px;
         padding-left: 1%;
         border: 1px solid rgba(0, 255, 60, 0.5);
-        color: white;
+        color: rgb(66, 244, 78);
+        font-family: 'Orbitron', sans-serif;
         font-size: 18px;
         &:focus {
             outline: none;
+            box-shadow: inset 0 0 15px rgba(15, 246, 254, 0.7);
+            background-color: rgba(29, 136, 135, 0.5)
           }
           background-color: rgb(33,38,34);
           &::-webkit-input-placeholder{
             text-align: center;
           }
     }
+    textarea {
+        height: 300px;
+    }
+   
 `
 
 

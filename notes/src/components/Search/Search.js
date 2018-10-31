@@ -8,10 +8,13 @@ const Search = styled.input`
   border-radius: 12px;
   padding-left: 1%;
   border: 1px solid rgba(0, 255, 60, 0.5);
-  color: white;
+  color: rgb(66, 244, 78);
   margin-top: 5%;
+  font-family: 'Orbitron', sans-serif;
   &:focus {
     outline: none;
+    box-shadow: inset 0 0 15px rgba(15, 246, 254, 0.7);
+    background-color: rgba(29, 136, 135, 0.5)
   }
   background-color: rgb(33,38,34);
   &::-webkit-input-placeholder{

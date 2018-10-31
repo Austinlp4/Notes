@@ -10,10 +10,10 @@ import styled from 'styled-components';
     border: none;
     padding: .4% 1% 1% 1%;
     border-radius: 4px;
-    box-shadow: 5px 5px 5px rgba(0, 255, 60, 0.2);
+    box-shadow: 0 8px 6px -6px rgba(0, 255, 60, 0.3);
     &:hover{
         background-color: rgba(48,57,50, 0.8);
-        box-shadow: 2px 2px 2px rgba(0, 255, 60, 0.5);
+        box-shadow: 0 3px 2px -2px rgba(0, 255, 60, 0.5);
       }
     a{
         text-decoration: none;
@@ -34,6 +34,7 @@ import styled from 'styled-components';
         font-size: 30px;
     }
     p{
+        font-size: 16px;
         /* hide text if it more than N lines  */
         overflow: hidden;
         /* for set '...' in absolute position */
@@ -43,7 +44,7 @@ import styled from 'styled-components';
         /* max-height = line-height (1.2) * lines max number (3) */
         max-height: 4.7em; 
         /* fix problem when last visible word doesn't adjoin right side  */
-        text-align: justify;  
+        /* text-align: justify; */
         /* place for '...' */
         margin-right: -1em;
         padding-right: 1em;

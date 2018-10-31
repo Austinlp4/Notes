@@ -12,15 +12,15 @@ import Signin from './auth/Signin';
 
 const Nav = styled.div`
   
-  height: 900px;
+  height: 100vh;
   margin-top: 0;
   padding: 3%;
   background-color: rgb(33,38,34);
-  box-shadow: 5px 5px 10px rgba(0, 255, 60, 0.5);
+  box-shadow: 5px 5px 10px rgba(15, 246, 254, 0.5);
   margin-right: 2%;
   h1{
     color: rgba(48,57,50, 0.8);
-    text-shadow: 2px 2px rgba(0, 255, 60, 0.5);
+    text-shadow: 2px 2px 2px rgb(15, 246, 254);
     text-align: center;
     font-size: 50px;
   }
@@ -37,10 +37,10 @@ const Nav = styled.div`
   align-items: center;
   border-radius: 4px;
   text-align: center;
-  box-shadow: 5px 5px 5px rgba(0, 255, 60, 0.5);
+  box-shadow: 5px 5px 5px rgba(15, 246, 254, 0.5);
   &:hover{
     background-color: rgba(48,57,50, 0.8);
-    box-shadow: 2px 2px 2px rgba(0, 255, 60, 0.5);
+    box-shadow: 2px 2px 2px rgba(15, 246, 254, 0.5);
   }
   }
   a{
