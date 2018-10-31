@@ -11,6 +11,8 @@ import styled from 'styled-components';
     padding: .4% 1% 1% 1%;
     border-radius: 4px;
     box-shadow: 0 8px 6px -6px rgba(0, 255, 60, 0.3);
+    resize: both;
+    overflow: hidden;
     &:hover{
         background-color: rgba(48,57,50, 0.8);
         box-shadow: 0 3px 2px -2px rgba(0, 255, 60, 0.5);
