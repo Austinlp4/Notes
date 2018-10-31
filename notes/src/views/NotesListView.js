@@ -4,6 +4,7 @@ import { getNotes, searchNote } from '../store/actions/index';
 import NotesList from '../components/NotesList/NotesList';
 import SearchBar from '../components/Search/Search';
 import styled from 'styled-components';
+import axios from 'axios';
 
 
 const Container = styled.div`
@@ -22,6 +23,7 @@ class NotesListView extends React.Component {
     
     componentDidMount() {
         // this.props.notesList;
+      
         if(this.props.notesList.length === 0){
             this.props.getNotes();
         } 
@@ -52,6 +54,7 @@ class NotesListView extends React.Component {
             </Container>
         );
     }
+    
 }
 
 const mapStateToProps = state => ({

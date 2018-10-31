@@ -21,7 +21,7 @@ server.get('/', (req,res) => {
     res.send('Everything is Working');
 });
 
-server.get('/notes', protected, (req, res) => {
+server.get('/notes', (req, res) => {
     db('notes')
       .select('id', 'title', 'content')
       .then(notes => {

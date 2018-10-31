@@ -7,6 +7,7 @@ import ResultsView from './views/ResultsView';
 import SingleNote from './views/SingleNote';
 import styled from 'styled-components';
 import Signup from './auth/Signup';
+import Signin from './auth/Signin';
 
 
 const Nav = styled.div`
@@ -76,12 +77,17 @@ class App extends Component {
           <li>
             <NavLink to='/register' onClick={this.toggleHidden}>           
               Register
-            </NavLink>
-            
+            </NavLink>          
+          </li>
+          <li>
+            <NavLink to='/login' onClick={this.toggleHidden}>           
+              Login
+            </NavLink>          
           </li>
           
         </Nav>
           <Route path='/register' component={Signup} />
+          <Route path='/login' component={Signin} />
         </div>
       )
     }
@@ -103,7 +109,7 @@ class App extends Component {
             </NavLink>
           </li>
         </Nav>
-        <Route path='/notes' component={NotesListView} />
+        <Route exact path='/notes' component={NotesListView} />
         <Route path= '/notes-form' component={NotesFormView} />
         <Route path='/notes/:noteId' component={SingleNote} />
         <Route path='/results' component={ResultsView} />
