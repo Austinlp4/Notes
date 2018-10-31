@@ -7,10 +7,11 @@ class Signup extends Component {
         password: ''
     };
 
+
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form >
                     <div>
                         <label>Username</label>
                         <input 
@@ -29,11 +30,13 @@ class Signup extends Component {
                           type='password'
                         />
                     </div>
+                    <button onClick={this.handleSubmit}>Sign Up</button>
                 </form>
             </div>
         );
     }
 
+  
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({ [name]: value });
@@ -47,6 +50,8 @@ class Signup extends Component {
           .post(endpoint, this.state)
           .then(res => {
               console.log(res.data)
+              localStorage.setItem('jwt', res.data.token);
+              this.props.history.push('/notes');
           })
           .catch(err => {
               console.log('ERROR', err)

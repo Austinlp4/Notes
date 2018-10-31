@@ -6,6 +6,7 @@ import NotesFormView from './views/NotesFormView';
 import ResultsView from './views/ResultsView';
 import SingleNote from './views/SingleNote';
 import styled from 'styled-components';
+import Signup from './auth/Signup';
 
 
 const Nav = styled.div`
@@ -66,6 +67,24 @@ class App extends Component {
   
 
   render() {
+    if(localStorage.length === 0){
+      return (
+        <div className = 'App'>
+        <Nav>
+          <h1>Notes</h1>
+          
+          <li>
+            <NavLink to='/register' onClick={this.toggleHidden}>           
+              Register
+            </NavLink>
+            
+          </li>
+          
+        </Nav>
+          <Route path='/register' component={Signup} />
+        </div>
+      )
+    }
     return (
       <div className="App">
         <Nav>
@@ -84,7 +103,7 @@ class App extends Component {
             </NavLink>
           </li>
         </Nav>
-        <Route exact path='/notes' component={NotesListView} />
+        <Route path='/notes' component={NotesListView} />
         <Route path= '/notes-form' component={NotesFormView} />
         <Route path='/notes/:noteId' component={SingleNote} />
         <Route path='/results' component={ResultsView} />
