@@ -6,7 +6,7 @@
   "author": "Austinlp4 <apendergrast44@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "devDependencies": {
     "nodemon": "^1.18.5"
