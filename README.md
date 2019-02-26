@@ -1,5 +1,6 @@
 # Notes
-Note taking application for everyday tasks. View all tasks at once or individual tasks with options to update, delete, or create a task.
+Note taking application for everyday tasks. View all tasks at once or individual tasks with options to update, delete, or create a task. You will need to create an account and be authenticated before viewing your notes
+
 
 ###Installation
   * Run ```yarn install``` or ```npm install``` to get all dependencies needed to run the application.
